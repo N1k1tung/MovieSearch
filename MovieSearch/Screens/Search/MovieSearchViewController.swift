@@ -68,7 +68,7 @@ final class MovieSearchViewController: UIViewController {
                 cell.titleLabel.text = item.title
                 cell.descriptionLabel.text = item.movieDescription
                 cell.favoriteButton.isSelected = item.isFavorite
-                cell.hideButton.isSelected = item.isHidden
+                cell.hideButton.setTitle(item.isHidden ? "Unhide" : "Hide", for: .normal)
                 cell.posterView.image = nil
                 if let imageUrl = item.poster, let url = URL(string: imageUrl) {
                     cell.posterView.af.setImage(withURL: url, filter: ScaledToSizeFilter(size: Constants.imageSize))

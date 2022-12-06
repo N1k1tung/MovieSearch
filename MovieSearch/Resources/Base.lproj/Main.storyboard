@@ -88,7 +88,7 @@
                                                             <state key="normal" title="Hide">
                                                                 <color key="titleColor" systemColor="tintColor"/>
                                                             </state>
-                                                            <state key="selected" title="Unhide">
+                                                            <state key="selected">
                                                                 <color key="titleColor" systemColor="tintColor"/>
                                                             </state>
                                                         </button>

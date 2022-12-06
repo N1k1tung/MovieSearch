@@ -68,9 +68,9 @@ final class MovieSearchViewModel: HasDisposeBag, InjectSearchRepo, InjectDatabas
     private func setupSearch() {
         let search = $searchText
             .map { $0.trimmed.lowercased() }
+            .distinctUntilChanged()
             .filter { !$0.isEmpty }
             .debounce(.milliseconds(600), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
         Observable.merge(search, forceReload)
             .flatMap { [weak self] in
                 guard let self else { return Observable<SearchResponse>.empty() }
